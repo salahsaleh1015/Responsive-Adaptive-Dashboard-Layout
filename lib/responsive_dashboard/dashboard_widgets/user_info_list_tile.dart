@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/utils/app_styles.dart';
 
-class CustomUserInfoListTileWidget extends StatelessWidget {
-  const CustomUserInfoListTileWidget({
+class UserInfoListTile extends StatelessWidget {
+  const UserInfoListTile({
     super.key,
     required this.title,
     required this.subTitle,
