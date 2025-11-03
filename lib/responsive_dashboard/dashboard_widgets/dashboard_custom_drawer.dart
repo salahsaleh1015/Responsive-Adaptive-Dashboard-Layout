@@ -8,7 +8,36 @@ import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/respo
 class DashboardCustomDrawer extends StatelessWidget {
   const DashboardCustomDrawer({super.key});
 
-  static const List<DashboardDrawerItemModel> items = [
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          DashboardUserInfoListTile(
+            title: "Lekan Okeowo",
+            subTitle: "demo@gmail.com",
+            image: Assets.imagesAvatar3,
+          ),
+          SizedBox(height: 8),
+          DashboardDrawerItemListView(),
+        ],
+      ),
+    );
+  }
+}
+
+class DashboardDrawerItemListView extends StatefulWidget {
+  const DashboardDrawerItemListView({super.key});
+
+  @override
+  State<DashboardDrawerItemListView> createState() =>
+      _DashboardDrawerItemListViewState();
+}
+
+class _DashboardDrawerItemListViewState
+    extends State<DashboardDrawerItemListView> {
+  final List<DashboardDrawerItemModel> items = [
     DashboardDrawerItemModel(
       title: "Dashboard",
       iconPath: Assets.imagesDashboard,
@@ -30,28 +59,28 @@ class DashboardCustomDrawer extends StatelessWidget {
       iconPath: Assets.imagesMyInvestments,
     ),
   ];
+
+  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Column(
-        children: [
-          DashboardUserInfoListTile(
-            title: "Lekan Okeowo",
-            subTitle: "demo@gmail.com",
-            image: Assets.imagesAvatar3,
-          ),
-          SizedBox(height: 8),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) =>DashboardDrawerItem(
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder:
+          (context, index) => GestureDetector(
+            onTap: () {
+              if (activeIndex != index) {
+                setState(() {
+                  activeIndex = index;
+                });
+              }
+            },
+            child: DashboardDrawerItem(
+              isActive: activeIndex == index,
               drawerItemModel: items[index],
             ),
-            itemCount: items.length,
           ),
-        ],
-      ),
+      itemCount: items.length,
     );
   }
 }
