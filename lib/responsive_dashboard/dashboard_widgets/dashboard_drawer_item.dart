@@ -4,17 +4,20 @@ import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/respo
 
 import '../dashboard_models/dashboard_drawer_item_model.dart';
 
-class DrawerItem extends StatelessWidget {
-  const DrawerItem({super.key, required this.drawerItemModel});
+class DashboardDrawerItem extends StatelessWidget {
+  const DashboardDrawerItem({super.key, required this.drawerItemModel});
 
   final DashboardDrawerItemModel drawerItemModel;
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: SvgPicture.asset(drawerItemModel.iconPath),
-      title: Text(
-        drawerItemModel.title,
-        style: AppStyles.styleMedium16(context),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: ListTile(
+        leading: SvgPicture.asset(drawerItemModel.iconPath),
+        title: Text(
+          drawerItemModel.title,
+          style: AppStyles.styleMedium16(context),
+        ),
       ),
     );
   }
