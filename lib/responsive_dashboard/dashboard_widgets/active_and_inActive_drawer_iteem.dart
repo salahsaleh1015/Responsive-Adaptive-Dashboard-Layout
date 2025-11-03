@@ -17,7 +17,7 @@ class InActiveDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 10),
       child: ListTile(
         leading: SvgPicture.asset(drawerItemModel.iconPath),
         title: Text(
