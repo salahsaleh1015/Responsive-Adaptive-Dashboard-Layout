@@ -34,3 +34,8 @@ Adaptive : Different UI for each platform
 
 * responsive font size = base font size * scale factor
 
+// important Note
+
+// the sizedBoxes are used to add space between widgets in responsive layout
+// has not responsive height & width
+// and also padding and margin are not responsive
