@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_models/all_expenses_item_model.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/all_expenses_item_header.dart';
+import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/utils/app_images.dart';
 
 class AllExpensesItem extends StatelessWidget {
-  const AllExpensesItem({super.key});
+  const AllExpensesItem({super.key, required this.allExpensesItemModel});
 
+  final AllExpensesItemModel allExpensesItemModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,11 +19,7 @@ class AllExpensesItem extends StatelessWidget {
         color: Colors.white,
       ),
       child: Column(
-        children: [
-          AllExpensesItemHeader(
-             image: '',
-          ),
-        ],
+        children: [AllExpensesItemHeader(image: allExpensesItemModel.image)],
       ),
     );
   }

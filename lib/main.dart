@@ -6,7 +6,7 @@ import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/respo
 
 void main() {
  //runApp(const AdaptiveApp());
- runApp(ResponsiveDashboard());
+runApp(ResponsiveDashboard());
 }
 
 
