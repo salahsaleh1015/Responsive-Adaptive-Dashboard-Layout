@@ -10,19 +10,37 @@ class AllExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return CustomDecoratedContainer(
+      child:  Column(
+        children: [
+          AllExpensesHeader(),
+          SizedBox(height: 20),
+          AllExpensesItemsListView(),
+        ],
+      ),
+    );
+
+  }
+}
+
+class CustomDecoratedContainer extends StatelessWidget {
+  const CustomDecoratedContainer({
+    super.key,
+    this.padding,
+    required this.child,
+  });
+
+  final double? padding;
+  final Widget child;
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(padding ?? 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        children: [
-          AllExpensesHeader(),
-          SizedBox(height: 20),
-          AllExpensesItemsListView()
-        ],
-      ),
+      child: child,
     );
   }
 }

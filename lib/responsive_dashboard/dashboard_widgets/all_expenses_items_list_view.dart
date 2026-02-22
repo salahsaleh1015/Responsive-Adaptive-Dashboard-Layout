@@ -3,10 +3,16 @@ import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/respo
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/all_expenses_item.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/utils/app_images.dart';
 
-class AllExpensesItemsListView extends StatelessWidget {
+class AllExpensesItemsListView extends StatefulWidget {
   const AllExpensesItemsListView({super.key});
 
-  static const List items = [
+  @override
+  State<AllExpensesItemsListView> createState() =>
+      _AllExpensesItemsListViewState();
+}
+
+class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
+  final List items = [
     AllExpensesItemModel(
       image: Assets.imagesIncome,
       title: "Income",
@@ -26,6 +32,9 @@ class AllExpensesItemsListView extends StatelessWidget {
       price: r"$170.344",
     ),
   ];
+
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -37,25 +46,37 @@ class AllExpensesItemsListView extends StatelessWidget {
               return Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: AllExpensesItem(allExpensesItemModel: item),
+                  child: GestureDetector(
+                    onTap: () {
+                      updateIndex(index);
+                    },
+                    child: AllExpensesItem(
+                      isActive: currentIndex == index,
+                      allExpensesItemModel: item,
+                    ),
+                  ),
                 ),
               );
             } else {
               return Expanded(
-                child: AllExpensesItem(allExpensesItemModel: item),
+                child: GestureDetector(
+                  onTap: () {
+                    updateIndex(index);
+                  },
+                  child: AllExpensesItem(
+                    isActive: currentIndex == index,
+                    allExpensesItemModel: item,
+                  ),
+                ),
               );
             }
           }).toList(),
     );
+  }
 
-    // return ListView.builder(
-    //   scrollDirection: Axis.horizontal,
-    //   itemCount: items.length,
-    //   itemBuilder: (context, index) {
-    //     return AllExpensesItem(
-    //       allExpensesItemModel: items[index]
-    //     );
-    //   },
-    // );
+  void updateIndex(int index) {
+    setState(() {
+      currentIndex = index;
+    });
   }
 }
