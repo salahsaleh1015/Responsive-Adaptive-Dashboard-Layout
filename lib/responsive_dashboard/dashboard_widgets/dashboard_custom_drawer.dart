@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/adaptive_app/adaptive_app_widgets/custom_drawer.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_models/dashboard_drawer_item_model.dart';
+import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_models/user_info_model.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/active_and_inActive_drawer_iteem.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dashboard_drawer_item.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dashboard_drawer_item_listview.dart';
@@ -18,9 +19,11 @@ class DashboardCustomDrawer extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: DashboardUserInfoListTile(
-              title: "Lekan Okeowo",
-              subTitle: "demo@gmail.com",
-              image: Assets.imagesAvatar3,
+              userInfoModel: UserInfoModel(
+                title: "Lekan Okeowo",
+                subTitle: "demo@gmail.com",
+                image: Assets.imagesAvatar3,
+              ),
             ),
           ),
           SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -29,7 +32,7 @@ class DashboardCustomDrawer extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                Expanded(child: SizedBox( )),
+                Expanded(child: SizedBox()),
                 InActiveDrawerItem(
                   drawerItemModel: DashboardDrawerItemModel(
                     title: "Settings",
