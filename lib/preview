@@ -40,6 +40,7 @@ Adaptive : Different UI for each platform
 // has not responsive height & width
 // and also padding and margin are not responsive
 
+// IntrinsicWidth is reverse toIntrinsicHeight
 
 
  figma Link
