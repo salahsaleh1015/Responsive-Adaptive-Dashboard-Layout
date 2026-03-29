@@ -55,6 +55,12 @@ class LatestTransactionListView extends StatelessWidget {
                 .toList(),
       ),
     );
+    /*
+    * احنا هنا مش محتاجين الList vew builde
+    * عشان عي lazy builder
+    * و احنا هنبني عدد قليل من العناصر
+    * فا ال Row حل افضل بكتير
+    * */
     return SizedBox(
       height: 80,
       child: ListView.builder(
