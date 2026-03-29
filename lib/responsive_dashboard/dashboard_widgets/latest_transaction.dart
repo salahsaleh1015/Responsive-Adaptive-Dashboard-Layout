@@ -59,19 +59,19 @@ class LatestTransactionListView extends StatelessWidget {
     * احنا هنا مش محتاجين الList vew builde
     * عشان عي lazy builder
     * و احنا هنبني عدد قليل من العناصر
-    * فا ال Row حل افضل بكتير
+    * فا ال Row حل افضل
     * */
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-        itemCount: items.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return IntrinsicWidth(
-            child: DashboardUserInfoListTile(userInfoModel: items[index]),
-          );
-        },
-      ),
-    );
+    // return SizedBox(
+    //   height: 80,
+    //   child: ListView.builder(
+    //     itemCount: items.length,
+    //     scrollDirection: Axis.horizontal,
+    //     itemBuilder: (context, index) {
+    //       return IntrinsicWidth(
+    //         child: DashboardUserInfoListTile(userInfoModel: items[index]),
+    //       );
+    //     },
+    //   ),
+    // );
   }
 }
