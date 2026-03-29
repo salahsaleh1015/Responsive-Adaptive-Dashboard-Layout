@@ -42,12 +42,28 @@ class LatestTransactionListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children:
+            items
+                .map(
+                  (value) => IntrinsicWidth(
+                    child: DashboardUserInfoListTile(userInfoModel: value),
+                  ),
+                )
+                .toList(),
+      ),
+    );
     return SizedBox(
-      height: 500,
+      height: 80,
       child: ListView.builder(
+        itemCount: items.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return IntrinsicWidth(child: DashboardUserInfoListTile(userInfoModel: items[index]));
+          return IntrinsicWidth(
+            child: DashboardUserInfoListTile(userInfoModel: items[index]),
+          );
         },
       ),
     );
