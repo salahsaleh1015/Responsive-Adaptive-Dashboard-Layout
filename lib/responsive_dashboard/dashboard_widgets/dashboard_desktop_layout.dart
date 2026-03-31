@@ -4,6 +4,7 @@ import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/respo
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/custom_card.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dashboard_custom_drawer.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dot_indecator.dart';
+import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/income_section.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/my_cards_and_transction_history_section.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/my_cards_page_view.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/quick_invoice.dart';
@@ -22,8 +23,15 @@ class DashboardDesktopLayout extends StatelessWidget {
           Expanded(child: DashboardCustomDrawer()),
           SizedBox(width: 32),
           AllExpensesAndQuickInvoicesSection(),
-
-          Expanded(child: MyCardsAndTransctionHistorySection()),
+          Expanded(child: SingleChildScrollView(
+            child: Column(
+              children: [
+                MyCardsAndTransctionHistorySection(),
+                SizedBox(height: 16,),
+                IncomeSection(),
+              ],
+            ),
+          )),
         ],
       ),
     );
