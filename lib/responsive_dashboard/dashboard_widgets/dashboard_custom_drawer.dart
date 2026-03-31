@@ -13,43 +13,45 @@ class DashboardCustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: DashboardUserInfoListTile(
-              userInfoModel: UserInfoModel(
-                title: "Lekan Okeowo",
-                subTitle: "demo@gmail.com",
-                image: Assets.imagesAvatar3,
+    return Material(
+      child: Container(
+        color: Colors.white,
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: DashboardUserInfoListTile(
+                userInfoModel: UserInfoModel(
+                  title: "Lekan Okeowo",
+                  subTitle: "demo@gmail.com",
+                  image: Assets.imagesAvatar3,
+                ),
               ),
             ),
-          ),
-          SliverToBoxAdapter(child: SizedBox(height: 8)),
-          DashboardDrawerItemListView(),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              children: [
-                Expanded(child: SizedBox()),
-                InActiveDrawerItem(
-                  drawerItemModel: DashboardDrawerItemModel(
-                    title: "Settings",
-                    iconPath: Assets.imagesSettings,
+            SliverToBoxAdapter(child: SizedBox(height: 8)),
+            DashboardDrawerItemListView(),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                children: [
+                  Expanded(child: SizedBox()),
+                  InActiveDrawerItem(
+                    drawerItemModel: DashboardDrawerItemModel(
+                      title: "Settings",
+                      iconPath: Assets.imagesSettings,
+                    ),
                   ),
-                ),
-                InActiveDrawerItem(
-                  drawerItemModel: DashboardDrawerItemModel(
-                    title: "Logout",
-                    iconPath: Assets.imagesLogout,
+                  InActiveDrawerItem(
+                    drawerItemModel: DashboardDrawerItemModel(
+                      title: "Logout",
+                      iconPath: Assets.imagesLogout,
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
-              ],
+                  SizedBox(height: 20),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

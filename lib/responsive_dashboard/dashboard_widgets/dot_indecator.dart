@@ -65,25 +65,27 @@ class _MyCustomPageViewState extends State<MyCustomPageView> {
   }
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.only(left: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("My card",style: AppStyles.styleSemiBold20(context),),
-          SizedBox(
-            height: 12,
-          ),
-          MyCardsPageView(
-            pageController: pageController,
-          ),
-          SizedBox(
-            height: 6,
-          ),
-          DotsIndicator(
-            currentIndex: currentPageIndex,
-          ),
-        ],
+    return  Material(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("My card",style: AppStyles.styleSemiBold20(context),),
+            SizedBox(
+              height: 12,
+            ),
+            MyCardsPageView(
+              pageController: pageController,
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            DotsIndicator(
+              currentIndex: currentPageIndex,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -13,7 +13,7 @@ class MyCardsAndTransctionHistorySection extends StatelessWidget {
       child: Column(
         children: [
           MyCustomPageView(),
-          Divider(height: 40, color: Color(0xffF1F1F1)),
+           Divider(height: 40, color: Color(0xffF1F1F1)),
           TrasnctionHistory(),
         ],
       ),

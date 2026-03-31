@@ -3,6 +3,7 @@ import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/respo
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/all_expenses_and_quick_invoices_section.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/custom_card.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dashboard_custom_drawer.dart';
+import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dashboard_mobile_layout.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/dot_indecator.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/income_section.dart';
 import 'package:mastering_flutter_responsive_and_adaptive_ui_design_course/responsive_dashboard/dashboard_widgets/my_cards_and_transction_history_section.dart';
@@ -28,16 +29,7 @@ class DashboardDesktopLayout extends StatelessWidget {
             child: AllExpensesAndQuickInvoicesSection(),
           ),
 
-          Expanded(
-            flex: 1,
-            child: ListView(
-              children: [
-                Expanded(child: MyCardsAndTransctionHistorySection()),
-                SizedBox(height: 16),
-                Expanded(child: IncomeSection()),
-              ],
-            ),
-          ),
+          DashboardMobileLayout(),
 
         
         ],
