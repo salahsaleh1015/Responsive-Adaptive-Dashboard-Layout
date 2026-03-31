@@ -8,15 +8,14 @@ class MyCardsAndTransctionHistorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomDecoratedContainer(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            MyCustomPageView(),
-            Divider(height: 40, color: Color(0xffF1F1F1)),
-            TrasnctionHistory(),
-          ],
-        ),
+    return  CustomDecoratedContainer(
+      padding: 8,
+      child: Column(
+        children: [
+          MyCustomPageView(),
+          Divider(height: 40, color: Color(0xffF1F1F1)),
+          TrasnctionHistory(),
+        ],
       ),
     );
   }

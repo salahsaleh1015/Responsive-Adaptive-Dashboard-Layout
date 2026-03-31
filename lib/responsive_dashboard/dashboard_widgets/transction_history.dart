@@ -12,7 +12,7 @@ class TrasnctionHistory extends StatelessWidget {
       children: [
         TansctionHistoryHeader(),
         SizedBox(
-          height: 20,
+          height: 10,
         ),
         Text(
           '13 April 2022',
@@ -24,9 +24,7 @@ class TrasnctionHistory extends StatelessWidget {
             height: 0,
           ),
         ),
-        SizedBox(
-          height: 16,
-        ),
+
         TransactionHistoryListView(),
       ],
     );
@@ -57,3 +55,4 @@ class TansctionHistoryHeader extends StatelessWidget {
     );
   }
 }
+

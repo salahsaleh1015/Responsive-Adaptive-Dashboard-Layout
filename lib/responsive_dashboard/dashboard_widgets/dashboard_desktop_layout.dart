@@ -18,20 +18,28 @@ class DashboardDesktopLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xfff7f9fa),
       body: Row(
-
         children: [
-          Expanded(child: DashboardCustomDrawer()),
-          SizedBox(width: 32),
-          AllExpensesAndQuickInvoicesSection(),
-          Expanded(child: SingleChildScrollView(
-            child: Column(
+          Expanded(
+            child: DashboardCustomDrawer(),
+          ),
+
+          Expanded(
+            flex: 2,
+            child: AllExpensesAndQuickInvoicesSection(),
+          ),
+
+          Expanded(
+            flex: 1,
+            child: ListView(
               children: [
-                MyCardsAndTransctionHistorySection(),
-                SizedBox(height: 16,),
-                IncomeSection(),
+                Expanded(child: MyCardsAndTransctionHistorySection()),
+                SizedBox(height: 16),
+                Expanded(child: IncomeSection()),
               ],
             ),
-          )),
+          ),
+
+        
         ],
       ),
     );
